@@ -1,52 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Electronic Manual</title>
+    <!-- 核心：5秒后自动跳转到图片 -->
+    <meta http-equiv="refresh" content="5; url='https://github.com/Maypulm/electronic-manual/raw/main/electronic%20manual-JPG.png'">
     <style>
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            padding: 20px;
-            background-color: #f4f4f4; /* 加个浅灰背景，看着舒服 */
+            padding: 50px;
+            background-color: #f8f9fa;
         }
         .container {
-            max-width: 800px;
+            max-width: 600px;
             margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
         }
         h1 {
             color: #333;
         }
-        /* 这里是重点：让图片自适应屏幕 */
-        img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ddd; /* 加个细边框，更像文档 */
-            display: block; /* 消除图片下面的小空隙 */
-            margin: 20px auto; /* 上下留白，左右居中 */
-        }
-        .note {
-            margin-top: 20px;
+        p {
             color: #666;
-            font-size: 14px;
+            line-height: 1.6;
+        }
+        .countdown {
+            font-size: 24px;
+            color: #007BFF;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Scan the code for the electronic manual</h1>
+        <h1>📄 产品说明书</h1>
+        <p>正在为您跳转到最新版说明书...</p >
+        <div class="countdown" id="countdown">5</div>
+        <p>如果页面没有自动跳转，请点击下方按钮：</p >
+        <a href=" ">立即查看说明书</a >
         
-        <!-- 重点：这里直接放图片 -->
-        <!-- 注意：src里的路径必须和你上传的文件名完全一致 -->
-        < img src="electronic manual-JPG.png" alt="Lumi Lab Smart Camera Product Manual">
-        
-        <div class="note">
-            If the image is too large, please zoom in or download the PDF version.
-        </div>
+        <p style="margin-top: 30px; font-size: 12px; color: #999;">
+            本页面将在 <span id="seconds">5</span> 秒后自动跳转
+        </p >
     </div>
+
+    <script>
+        // 倒计时显示
+        let seconds = 5;
+        const countdownElement = document.getElementById('countdown');
+        const secondsElement = document.getElementById('seconds');
+        
+        const countdown = setInterval(() => {
+            seconds--;
+            countdownElement.textContent = seconds;
+            secondsElement.textContent = seconds;
+            
+            if (seconds <= 0) {
+                clearInterval(countdown);
+            }
+        }, 1000);
+    </script>
 </body>
 </html>
