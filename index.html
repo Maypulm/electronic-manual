@@ -26,51 +26,13 @@
             color: #666;
             line-height: 1.6;
         }
-        .countdown {
-            font-size: 24px;
-            color: #007BFF;
-            font-weight: bold;
-            margin: 20px 0;
-        }
-        a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>📄 产品说明书</h1>
-        <p>正在为您跳转到最新版说明书...</p >
-        <div class="countdown" id="countdown">5</div>
-        <p>如果页面没有自动跳转，请点击下方按钮：</p >
-        <a href=" ">立即查看说明书</a >
-        
-        <p style="margin-top: 30px; font-size: 12px; color: #999;">
-            本页面将在 <span id="seconds">5</span> 秒后自动跳转
-        </p >
+        <h1>Scan the code for the electronic manual</h1>
+        The image will load automatically, or you can <a href=" " target="_blank">click here</a >.
+        If the image is too large, please zoom in or download the PDF version.
     </div>
-
-    <script>
-        // 倒计时显示
-        let seconds = 5;
-        const countdownElement = document.getElementById('countdown');
-        const secondsElement = document.getElementById('seconds');
-        
-        const countdown = setInterval(() => {
-            seconds--;
-            countdownElement.textContent = seconds;
-            secondsElement.textContent = seconds;
-            
-            if (seconds <= 0) {
-                clearInterval(countdown);
-            }
-        }, 1000);
-    </script>
 </body>
 </html>
